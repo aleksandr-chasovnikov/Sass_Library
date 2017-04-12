@@ -1,4 +1,4 @@
-$icons-layout: vertical
+//	sprites with padding
 $icons: sprite-map("icons/*.png", $spacing: 10px)
 
 // Вычисляет размер изображения($path - путь)
@@ -6,19 +6,20 @@ $icons: sprite-map("icons/*.png", $spacing: 10px)
 	width: image-width($path)
 	height: image-height($path)
 
-// $sprite - имя картинки, $icons - путь
+//Позициониорование иконки в спрайте. $sprite - имя картинки, $icons - путь
 =s($sprite, $map: $icons)
 	+image-size(sprite-file($map, $sprite))
 	background-position: sprite-position($map, $sprite)
+	//background-image: inline-image('icons/'+$sprite+'.png','image/png')
+
+=sized-sprite($map, $sprite)
+	background: sprite($map, $sprite) no-repeat
+	+image-size(sprite-file($map, $sprite))
 
 //for retina
 =image-sizer($path)
 	width: image-width($path) / 2
 	height: image-height($path) / 2
-
-=sized-sprite($map, $sprite)
-	background: sprite($map, $sprite) no-repeat
-	+image-size(sprite-file($map, $sprite))
 
 //for retina
 =sized-spriter($map, $sprite)
@@ -46,7 +47,7 @@ $icons: sprite-map("icons/*.png", $spacing: 10px)
 
 =svg($name, $width, $height)
 	background: url("../img/svg/#{$name}.svg") no-repeat 0 0
-	background-image: inline-image('icons/svg/'+$sprite+'.svg','image/svg')
+	//background-image: inline-image('icons/svg/'+$sprite+'.svg','image/svg'); // to switches sprites to base64, elegant
 	+background-size(#{$width}px #{$height}px)
 	width: #{$width}px
 	height: #{$height}px
@@ -54,5 +55,5 @@ $icons: sprite-map("icons/*.png", $spacing: 10px)
 
 =svgi($name, $width, $height)
 	background: url("../img/svg/#{$name}.svg") no-repeat 0 0
-	background-image: inline-image('icons/svg/'+$sprite+'.svg','image/svg')
+	//background-image: inline-image('icons/svg/'+$sprite+'.svg','image/svg'); // to switches sprites to base64, elegant
 	+background-size(#{$width}px #{$height}px)
