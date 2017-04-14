@@ -128,26 +128,6 @@
 	*zoom: 1;
 }
 
-//Дочерние элементы (указать им display: inline-block; width)
-// равномерно занимают весь блок
-@mixin justify {
-	text-align: justify;
-	line-height: 0;
-	font-size: 0;
-	text-justify: newspaper;
-	zoom: 1;
-	text-align-last: justify;
-	&:after {
-		content: "";
-		display: inline-block;
-		width: 100%;
-		height: 0px;
-		visibility: hidden;
-		overflow: hidden;
-	}
-}
-
-// @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin 
 @function makelongshadow($color) {
 	$val: 0px 0px $color;
 	@for $i from 1 through 200 {
@@ -159,7 +139,6 @@
 @mixin longshadow($color) {
 	text-shadow: makelongshadow($color);
 }
-// @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin @mixin ;
 
 // width
 @mixin media($width) {
@@ -386,27 +365,6 @@
 	-ms-text-shadow: $string;
 	-o-text-shadow: $string;
 	text-shadow: $string;
-}
-
-// Центрирование блока по горизонтали и по вертикали
-@mixin vcenter {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	@include translate(-50%,-50%);
-}
-
-//Выравнивание по вертикали (работает на строчные дочерние элементы с какой-нибудь шириной)
-@mixin vcenter-inline {
-	text-align: center;
-	font-size: 0;
-	&:before {
-		content: "";
-		display: inline-block;
-		vertical-align: middle;
-		width: 0;
-		height: 100%;
-	}
 }
 
 @mixin unsel {

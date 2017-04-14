@@ -1,24 +1,82 @@
 
-///* ICONS ================== */
-//.ic {
-//    position: relative;
-//    display: inline-block;
-//    vertical-align: middle;
-//    background: $icons no-repeat;
-//}
-//@each $i in rss, twitter {
-//    .ic--#{$i} {
-//        @include s(ic--#{$i});
-//    }
-//}
-///* ICONS END ================== */
-/* 1. MAIN ================== */
-.main  {    
+//Видимость блоков (тест):
+$border: 1px solid #000; 
+
+$color_bg: #eee;
+$color_text: #fff;
+$color_input_text: #333;
+$color_input_bg: #999;
+$color_placeholder: #777;
+
+$color_btn_bg: transparent;
+$color_btn_txt: #777;
+
+$text_shadow: 0;
+$box_shadow: 0;
+
+$color_link: #999;
+$color_visit: #C62EB2;
+$color_hover: #414041;
+$color_active: #c62f21;
+$color_link_bg: transparent;
+
+$font_name: Helvetica;
+$font_size: 18px;
+$font-weight: 400;
+
+@include font('#{$font_name}', '#{$font_name}Bold') {
+    font-style: normal;
+    font-weight: 700;
+}
+
+@include font('#{$font_name}', '#{$font_name}Extrabold') {
+    font-style: normal;
+    font-weight: 900;
+}
+
+@include font('#{$font_name}', '#{$font_name}Regular') {
+    font-style: normal;
+    font-weight: 400;
+}
+
+a {  
+    @include tr(all 0.3s linear);
+    text-decoration: none;
+    color: $color_link;
+    outline: none;
+    background: $color_link_bg;
+    &:visited {
+        color: $color_visit;
+    }
+    &:hover {
+        color: $color_hover;
+    }
+    &:active {
+        color: $color_active;
+    }
+}
+
+body {
+    font-family: '#{$font_name}', Arial, Tahoma, sans-serif;
+    @include bg;
     position: relative;
-    overflow: hidden;
+    font-size: $font_size ;
+    font-weight: $font-weight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
     min-height: 100%;
 }
 
+* {
+    @include box-sizing(border-box);
+    &:before,
+    &:after {
+        @include box-sizing(border-box);
+    }
+}
+
+/* 1. MAIN ================== */
 .wrapper {
     position: relative;
     max-width: 1200px;
@@ -64,6 +122,19 @@ h3 {
 /* MAIN END ================== */ 
 
 /* BUTTON ================== */
+button {
+    cursor: pointer;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+input {
+    &[type="button"],
+    &[type="submit"] {
+        @extend button;
+    }
+}
+
 .btn, a.btn {
     display: inline-block;
     vertical-align: middle;
@@ -83,6 +154,13 @@ input[type="submit"].btn, button.btn {
 /* BUTTON END ================== */
 
 /* FORM ================== */
+input, textarea {
+    color: $color_input_text;
+    outline: none;
+    @include br(0);
+    -webkit-appearance: none;
+}
+
 input[type="text"], input[type="password"],
 input[type="tel"], input[type="email"],
 textarea {
@@ -110,37 +188,26 @@ label {
 }
 /* FORM END ================== */
 
-
 /* HEADER ================== */
 .header {
     padding: 15px 25px;
-    background: #888;
-    @include clr;
-    &__logo {
-        float:left;
-    }
-    &__nav {
-        float:right;
-        margin-top: 10px;
-        .nav__link {
-            margin-right: 20px;
-        }
-    }
-}
-
-.logo {
-    width: 150px;
-    height: 40px;
-    margin-right: 20px;
-    background: #888;
+    background: inherit;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
 }
 
 .nav {
+    text-align: justify;
+    border: $border;
     &__link {
         display: inline-block;
-        color: #fff;
-        font-size: 14px;
-        text-transform: uppercase;
+        height: 50px;
+        line-height: 50px;
+        border: $border;
     }
 }
 
@@ -367,6 +434,8 @@ label {
 //         font-weight: 700
 //         line-height: 34px
 //         margin-right: 8px
+
+
 /* HEADER END ================== */
 
 /* CONTENT ================== */
