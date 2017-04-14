@@ -1,165 +1,197 @@
 
+///* ICONS ================== */
+//.ic {
+//    position: relative;
+//    display: inline-block;
+//    vertical-align: middle;
+//    background: $icons no-repeat;
+//}
+//@each $i in rss, twitter {
+//    .ic--#{$i} {
+//        @include s(ic--#{$i});
+//    }
+//}
+///* ICONS END ================== */
 /* 1. MAIN ================== */
-.main 
-    position: relative
-    overflow: hidden
-    min-height: 100%
+.main  {    
+    position: relative;
+    overflow: hidden;
+    min-height: 100%;
+}
 
-.wrapper
-    position: relative
-    max-width: 1200px
-    min-width: 320px
-    padding: 0 15px
-    margin-right: auto 
-    margin-left: auto
-    // +clr
+.wrapper {
+    position: relative;
+    max-width: 1200px;
+    min-width: 320px;
+    padding: 0 15px;
+    margin-right: auto;
+    margin-left: auto;
+    // @include clr;
+}
 
-h1 
-    padding: 10px 0 15px
-    color: $color_text
-    text-transform: uppercase
-    font-size: 129px
-    line-height: 104px
-    font-weight: 900    
-    .text-sm
-        font-size: 82px
-        line-height: 95px
-    small
-        font-size: 124px
-        line-height: 99px
+h1 {
+    padding: 10px 0 15px;
+    color: $color_text;
+    text-transform: uppercase;
+    font-size: 129px;
+    line-height: 104px;
+    font-weight: 900;   
+    .text-sm {
+        font-size: 82px;
+        line-height: 95px;
+    }
+    small {
+        font-size: 124px;
+        line-height: 99px;
+    }
+}
 
-h3 
-    padding: 15px 0
-    color: $color_text
-    font-size: 33px
-    font-weight: 700
-    line-height: 35px
+h3 {
+    padding: 15px 0;
+    color: $color_text;
+    font-size: 33px;
+    font-weight: 700;
+    line-height: 35px;
+}
 
-.text-left
-    text-align: left !important
+.text-left {
+    text-align: left !important;
+}
 
-.text-right
-    text-align: right !important
+.text-right {
+    text-align: right !important;
+}
 /* MAIN END ================== */ 
 
-/* ICONS ================== */
-.ic 
-    position: relative
-    display: inline-block
-    vertical-align: middle
-    background: $icons no-repeat
-
-@each $i in next, prev
-    .ic--#{$i}
-        +s(ic--#{$i})
-/* ICONS END ================== */
-
 /* BUTTON ================== */
-.btn, a.btn 
-    display: inline-block
-    vertical-align: middle
-    text-align: center
-    padding: 10px 20px 0
-    height: 40px
-    color: $color_btn_txt
-    font: normal 16px/16px  "#{$font_name}", Arial, sans-serif
-    +tr(all 0.3s linear)
-    background-color: $color_btn_bg
-    border: none
+.btn, a.btn {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    padding: 10px 20px 0;
+    height: 40px;
+    color: $color_btn_txt;
+    font: normal 16px/16px  "#{$font_name}", Arial, sans-serif;
+    @include tr(all 0.3s linear);
+    background-color: $color_btn_bg;
+    border: none;
+}
 
-input[type="submit"].btn, button.btn
-    padding-top: 0
+input[type="submit"].btn, button.btn {
+    padding-top: 0;
+}
 /* BUTTON END ================== */
 
 /* FORM ================== */
 input[type="text"], input[type="password"],
 input[type="tel"], input[type="email"],
-textarea
-    height: 40px
-    padding: 0 15px
-    font: normal 14px/14px Arial, sans-serif
-    color: $color_text
-    background: $color_input_bg
-    border: 1px solid #ccc
-    &.form-control
-        display: block
-        width: 100%
+textarea {
+    height: 40px;
+    padding: 0 15px;
+    font: normal 14px/14px Arial, sans-serif;
+    color: $color_text;
+    background: $color_input_bg;
+    border: 1px solid #ccc;
+    &.form-control {
+            display: block;
+            width: 100%;
+    }
+}
 
-textarea
-    resize: none 
-    height: auto
-    min-height: 100px
-    padding-top: 10px
+textarea {
+    resize: none;
+    height: auto;
+    min-height: 100px;
+    padding-top: 10px;
+}
 
-label 
-    display: block
+label {
+    display: block;
+}
 /* FORM END ================== */
 
 
 /* HEADER ================== */
-.header
-    padding: 15px 25px
-    background: #888
-    +clr
-    &__logo
-        float:left
-    &__nav
-        float:right
-        margin-top: 10px
-        .nav__link
-            margin-right: 20px
+.header {
+    padding: 15px 25px;
+    background: #888;
+    @include clr;
+    &__logo {
+        float:left;
+    }
+    &__nav {
+        float:right;
+        margin-top: 10px;
+        .nav__link {
+            margin-right: 20px;
+        }
+    }
+}
 
-.logo
-    width: 150px
-    height: 40px
-    margin-right: 20px
-    background: #888
+.logo {
+    width: 150px;
+    height: 40px;
+    margin-right: 20px;
+    background: #888;
+}
 
-.nav
-    &__link
-        display: inline-block
-        color: #fff
-        font-size: 14px
-        text-transform: uppercase
+.nav {
+    &__link {
+        display: inline-block;
+        color: #fff;
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+}
 
-.article
-    background: #888
-    +clr
-    &__item
-        padding: 10px
-        border-bottom: 1px solid #444
-        &_small
-        	float: left
-        	width: 50%
-        	border-bottom: none
+.article {
+    background: #888;
+    @include clr;
+    &__item {
+        padding: 10px;
+        border-bottom: 1px solid #444;
+        &_small {
+            float: left;
+            width: 50%;
+            border-bottom: none;
+        }
+    }
+}
 
-.item
-	+clr
-	&__img
-		display: block
-		width: 100px
-		height: 100px
-		float: left
-		margin: 15px
-	&__description
-		margin-bottom: 0
-		color: #fff
-		font-size: 18px
-	&__link
-		display: inline-block
-		color: #000
-		font-size: 14px
-		&-more
-			padding: 5px 10px
-			margin-right: 10px
-			color: yellow
-			border: 1px solid yellow
+.item {
+	@include clr;
+	&__img { 
+		display: block;
+		width: 100px;
+		height: 100px;
+		float: left;
+		margin: 15px;
+    }
+	&__description {
+		margin-bottom: 0;
+		color: #fff;
+		font-size: 18px;
+    }
+	&__link {
+		display: inline-block;
+		color: #000;
+		font-size: 14px;
+		&-more {
+			padding: 5px 10px;
+			margin-right: 10px;
+			color: yellow;
+			border: 1px solid yellow;
+        }
+    }
+}
 
-.footer
-	padding: 15px 25px
-	background: #eee
-	&__logo
-		margin: 0 auto
+.footer {
+	padding: 15px 25px;
+	background: #eee;
+	&__logo {
+		margin: 0 auto;
+    }
+}
 
 // .header 
 //     position: absolute
@@ -168,8 +200,8 @@ label
 //     width: 100%
 //     &__top
 //         // padding: 35px 0 20px
-//         // +df 
-//         // +jc
+//         // @include df 
+//         // @include jc
 //     &__bottom
 //         border-bottom: 1px solid #dedede
 
@@ -180,7 +212,7 @@ label
 //     font-size: 12px
 //     font-weight: 600
 //     line-height: 17px
-//     & + .circle
+//     & @include  .circle
 //         margin-left: 8px
 //     &:before 
 //         content: ''
@@ -190,7 +222,7 @@ label
 //         height: 8px
 //         margin-right: 2px
 //         background-color: #2d71cf
-//         +border-radius(50%)
+//         @include border-radius(50%)
 //     &:nth-child(2):before
 //         background-color: #7218b2
 
@@ -199,7 +231,7 @@ label
 //     &__item 
 //         display: inline-block
 //         vertical-align: top
-//         & + .list-lang__item 
+//         & @include  .list-lang__item 
 //             margin-left: 10px
 //     &__link 
 //         display: block
@@ -211,8 +243,8 @@ label
 //     height: 41px
 //     padding: 5px 11px
 //     background-color: #ffffff
-//     +box-shadow(0 0 10px rgba(0, 0, 0, 0.08))
-//     +border-radius(3px)
+//     @include box-shadow(0 0 10px rgba(0, 0, 0, 0.08))
+//     @include border-radius(3px)
 //     border: 1px solid #eee
 //     &__type 
 //         position: relative
@@ -246,11 +278,11 @@ label
 //         left: 0
 //         width: 100%
 //         top: 0
-//         +tr(all 0.5s linear)
+//         @include tr(all 0.5s linear)
 //     &-menu 
 //         list-style: none
-//         // +df
-//         // +jc
+//         // @include df
+//         // @include jc
 //         &__item
 //             display: inline-block
 //             position: relative
@@ -283,8 +315,8 @@ label
 
 // .panel 
 //     padding: 15px 0
-//     // +df 
-//     // +jc
+//     // @include df 
+//     // @include jc
 //     -webkit-flex-wrap: wrap
 //     flex-wrap: wrap
 //     &__text 
@@ -300,25 +332,25 @@ label
 //             border-bottom-color: transparent
 
 // .social 
-//     // +df
+//     // @include df
 //     &-list 
 //         list-style: none
-//         // +df
+//         // @include df
 //         &__link 
-//             // +df 
-//             // +align-items
+//             // @include df 
+//             // @include align-items
 //             width: 33px
 //             height: 33px
 //             margin: 0 1px
 //             background-color: transparent
 //             border: 2px solid transparent
-//             +border-radius(50%)
+//             @include border-radius(50%)
 //             span 
 //                 display: block
 //                 width: 25px
 //                 height: 25px
 //                 background: #8d8d8d
-//                 +border-radius(50%)
+//                 @include border-radius(50%)
 //                 color: #fff
 //                 font-size: 18px
 //                 font-weight: 700
@@ -338,19 +370,22 @@ label
 /* HEADER END ================== */
 
 /* CONTENT ================== */
-.content
-    width: 100%
+.content {
+    width: 100%;
+}
  
 // Центрирование при прокрутке секций страницы:   
-.section:not(.home)
-    padding-top: 55px !important
+.section:not(.home) {
+    padding-top: 55px !important;
+}
 /* CONTENT END ================== */
 
 /* 6. FOOTER ================== */
-footer 
-    position: absolute
-    left: 0
-    width: 100%
-    bottom: 0
+footer {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+}
 /* MEDIA ================== */
 /* MEDIA END ================== */
