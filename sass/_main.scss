@@ -1,6 +1,6 @@
 
 //Видимость блоков (тест):
-$border: 1px solid #000; 
+$border-test: 1px solid #000; 
 
 $color_bg: #eee;
 $color_text: #fff;
@@ -76,17 +76,6 @@ body {
     }
 }
 
-/* 1. MAIN ================== */
-.wrapper {
-    position: relative;
-    max-width: 1200px;
-    min-width: 320px;
-    padding: 0 15px;
-    margin-right: auto;
-    margin-left: auto;
-    // @include clr;
-}
-
 h1 {
     padding: 10px 0 15px;
     color: $color_text;
@@ -110,6 +99,56 @@ h3 {
     font-size: 33px;
     font-weight: 700;
     line-height: 35px;
+}
+
+
+/* ICONS ================== */
+.ic  {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    background: $icons no-repeat;
+}
+
+ @each $i in rss, twitter {
+     .ic--#{$i} {
+         @include s(#{$i});
+     }
+ }
+/* ICONS END ================== */
+
+/* GRID ======================== */
+$width: 100%;
+$gutter: auto;
+// Отступы между колонок:
+$gutter-col: 10px;
+$columns: 12;
+
+.my-row {   
+    margin-left: $gutter;
+    margin-right: $gutter;
+    border: $border-test;
+    @include flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    @include col(4, 2000);
+    @include col(6, 992);
+    @include col(8, 768);
+}
+/* GRID END ======================== */
+
+/* MAIN ================== */
+.wrapper {
+    position: relative;
+    max-width: 1280px;
+    min-width: 320px;
+    padding: 0 15px;
+    margin-right: auto;
+    margin-left: auto;
+    border: $border-test;
+    // @include clr;
 }
 
 .text-left {
@@ -190,6 +229,7 @@ label {
 
 /* HEADER ================== */
 .header {
+    border: $border-test;
     padding: 15px 25px;
     background: inherit;
     display: -webkit-flex;
@@ -201,18 +241,18 @@ label {
 }
 
 .nav {
+    border: $border-test;
     text-align: justify;
-    border: $border;
     &__link {
         display: inline-block;
         height: 50px;
         line-height: 50px;
-        border: $border;
+        border: $border-test;
     }
 }
 
 .article {
-    background: #888;
+    border: $border-test;
     @include clr;
     &__item {
         padding: 10px;
@@ -226,6 +266,7 @@ label {
 }
 
 .item {
+    border: $border-test;
 	@include clr;
 	&__img { 
 		display: block;
@@ -238,6 +279,7 @@ label {
 		margin-bottom: 0;
 		color: #fff;
 		font-size: 18px;
+        border: $border-test;
     }
 	&__link {
 		display: inline-block;
@@ -247,18 +289,11 @@ label {
 			padding: 5px 10px;
 			margin-right: 10px;
 			color: yellow;
-			border: 1px solid yellow;
+            border: $border-test;
         }
     }
 }
 
-.footer {
-	padding: 15px 25px;
-	background: #eee;
-	&__logo {
-		margin: 0 auto;
-    }
-}
 
 // .header 
 //     position: absolute
@@ -440,6 +475,7 @@ label {
 
 /* CONTENT ================== */
 .content {
+    border: $border-test;
     width: 100%;
 }
  
@@ -451,10 +487,20 @@ label {
 
 /* 6. FOOTER ================== */
 footer {
-    position: absolute;
+    border: $border-test;
+//    position: absolute;
     left: 0;
     width: 100%;
     bottom: 0;
 }
+.footer {
+    border: $border-test;
+    padding: 15px 25px;
+    background: #eee;
+    &__logo {
+        margin: 0 auto;
+    }
+}
+
 /* MEDIA ================== */
 /* MEDIA END ================== */

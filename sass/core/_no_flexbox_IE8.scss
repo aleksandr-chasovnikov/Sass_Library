@@ -90,19 +90,28 @@
 
 // ВАРИАНТ 3 (Не поддерж. IE8 и ниже) "translateY(-50%)" - половина собственной высоты.
 // Если высота элемента нечетная, то текст и линии будут размытыми(по пол px)
-@mixin vcenter-abs {
+
+@mixin centerer($horizontal: true, $vertical: true) {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
 }
 
-//EXAMLE:
+          //EXAMLE:
 //.parent {
 //	height: 100vh;
 //	position: relative;
 //	.child {
-//		@include vcenter-abs;
+//		@include vcenter-abs(false, true);
 //	}
 //}
 
